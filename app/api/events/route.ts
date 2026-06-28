@@ -1,13 +1,21 @@
 // Event ingestion endpoint (full-stack/server mode only).
 // POST /api/events  { name, userId, properties? }  with header x-api-key
 //
-// NOTE: this route is excluded from the static export. When building the
-// GitHub Pages demo (NEXT_PUBLIC_STATIC_DEMO=true) the whole /api tree is not
-// emitted because `output: export` skips route handlers.
+// In static-demo mode (NEXT_PUBLIC_STATIC_DEMO=true) there is no server; the
+// route is rendered as a static stub and ingestion is a no-op.
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+
+export const dynamic =
+  process.env.NEXT_PUBLIC_STATIC_DEMO === "true" ? "force-static" : "force-dynamic";
 
 export async function POST(req: NextRequest) {
+  if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+    return NextResponse.json(
+      { error: "ingestion is disabled in the static demo" },
+      { status: 501 }
+    );
+  }
+  const { prisma } = await import("@/lib/db");
   const apiKey = req.headers.get("x-api-key");
   if (!apiKey) {
     return NextResponse.json({ error: "missing x-api-key" }, { status: 401 });

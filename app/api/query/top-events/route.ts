@@ -1,9 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
 import { topEvents } from "@/lib/analytics";
 import type { AnalyticsEvent } from "@/lib/types";
 
+// Static-demo mode renders an empty stub; full-stack mode queries Postgres.
+export const dynamic =
+  process.env.NEXT_PUBLIC_STATIC_DEMO === "true" ? "force-static" : "force-dynamic";
+
 export async function GET(req: NextRequest) {
+  if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+    return NextResponse.json([]);
+  }
+  const { prisma } = await import("@/lib/db");
   const limit = Number(req.nextUrl.searchParams.get("limit") ?? 10);
   const rows = await prisma.event.findMany({
     select: { id: true, name: true, userId: true, timestamp: true },

@@ -1,11 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
 import { timeSeries } from "@/lib/analytics";
 import type { AnalyticsEvent } from "@/lib/types";
 
+// In static-demo mode (GitHub Pages export) there is no server, so this route
+// is rendered statically as an empty stub. In full-stack mode it queries Postgres.
+export const dynamic =
+  process.env.NEXT_PUBLIC_STATIC_DEMO === "true" ? "force-static" : "force-dynamic";
+
 export async function GET(req: NextRequest) {
-  const sp = req.nextUrl.searchParams;
-  const eventName = sp.get("event") ?? undefined;
+  if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+    return NextResponse.json([]);
+  }
+  const { prisma } = await import("@/lib/db");
+  const eventName = req.nextUrl.searchParams.get("event") ?? undefined;
   const rows = await prisma.event.findMany({
     select: { id: true, name: true, userId: true, timestamp: true },
     orderBy: { timestamp: "asc" },

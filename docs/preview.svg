@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" font-family="Segoe UI, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="660" fill="#0b0e14"/>
+
+  <!-- topbar -->
+  <rect width="1100" height="56" fill="#131722"/>
+  <line x1="0" y1="56" x2="1100" y2="56" stroke="#232a3a"/>
+  <circle cx="34" cy="28" r="7" fill="url(#accent)"/>
+  <text x="50" y="33" fill="#e6e9ef" font-size="18" font-weight="700">Insightly</text>
+  <rect x="148" y="18" width="158" height="22" rx="11" fill="none" stroke="#232a3a"/>
+  <text x="162" y="33" fill="#8b95a8" font-size="12">demo dataset · seeded</text>
+  <text x="1010" y="33" fill="#22d3ee" font-size="14">← Home</text>
+
+  <!-- KPI cards -->
+  <g>
+    <rect x="24"  y="80" width="252" height="92" rx="14" fill="#161b27" stroke="#232a3a"/>
+    <rect x="288" y="80" width="252" height="92" rx="14" fill="#161b27" stroke="#232a3a"/>
+    <rect x="552" y="80" width="252" height="92" rx="14" fill="#161b27" stroke="#232a3a"/>
+    <rect x="816" y="80" width="260" height="92" rx="14" fill="#161b27" stroke="#232a3a"/>
+
+    <text x="44"  y="108" fill="#8b95a8" font-size="13">Total events</text>
+    <text x="44"  y="142" fill="#e6e9ef" font-size="30" font-weight="800">42,808</text>
+    <text x="308" y="108" fill="#8b95a8" font-size="13">Unique users</text>
+    <text x="308" y="142" fill="#e6e9ef" font-size="30" font-weight="800">1,200</text>
+    <text x="572" y="108" fill="#8b95a8" font-size="13">Events / day (avg)</text>
+    <text x="572" y="142" fill="#e6e9ef" font-size="30" font-weight="800">713</text>
+    <text x="836" y="108" fill="#8b95a8" font-size="13">Avg events / user</text>
+    <text x="836" y="142" fill="#e6e9ef" font-size="30" font-weight="800">35.67</text>
+  </g>
+
+  <!-- time series card -->
+  <rect x="24" y="188" width="1052" height="200" rx="14" fill="#161b27" stroke="#232a3a"/>
+  <text x="44" y="216" fill="#e6e9ef" font-size="15" font-weight="700">Events over time</text>
+  <rect x="930" y="200" width="128" height="26" rx="8" fill="#131722" stroke="#232a3a"/>
+  <text x="946" y="217" fill="#e6e9ef" font-size="12">All events ▾</text>
+  <!-- area chart -->
+  <path d="M50,360 L130,330 L210,300 L290,340 L370,290 L450,250 L530,275 L610,235 L690,255 L770,210 L850,230 L930,200 L1010,225 L1050,210 L1050,372 L50,372 Z" fill="url(#area)"/>
+  <path d="M50,360 L130,330 L210,300 L290,340 L370,290 L450,250 L530,275 L610,235 L690,255 L770,210 L850,230 L930,200 L1010,225 L1050,210" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
+
+  <!-- funnel card -->
+  <rect x="24" y="404" width="640" height="232" rx="14" fill="#161b27" stroke="#232a3a"/>
+  <text x="44" y="432" fill="#e6e9ef" font-size="15" font-weight="700">Conversion funnel</text>
+
+  <g font-size="12">
+    <text x="44" y="464" fill="#c3cad8">pageview</text>
+    <rect x="150" y="454" width="470" height="16" rx="6" fill="url(#bar)"/>
+    <text x="628" y="466" fill="#8b95a8">100%</text>
+
+    <text x="44" y="492" fill="#c3cad8">signup_started</text>
+    <rect x="150" y="482" width="428" height="16" rx="6" fill="url(#bar)"/>
+    <text x="586" y="494" fill="#8b95a8">91%</text>
+
+    <text x="44" y="520" fill="#c3cad8">signup_completed</text>
+    <rect x="150" y="510" width="403" height="16" rx="6" fill="url(#bar)"/>
+    <text x="561" y="522" fill="#8b95a8">86%</text>
+
+    <text x="44" y="548" fill="#c3cad8">checkout_started</text>
+    <rect x="150" y="538" width="328" height="16" rx="6" fill="url(#bar)"/>
+    <text x="486" y="550" fill="#8b95a8">70%</text>
+
+    <text x="44" y="576" fill="#c3cad8">checkout_completed</text>
+    <rect x="150" y="566" width="259" height="16" rx="6" fill="url(#bar)"/>
+    <text x="417" y="578" fill="#8b95a8">55%</text>
+  </g>
+  <text x="44" y="612" fill="#8b95a8" font-size="12">Overall conversion (first → last):
+    <tspan fill="#34d399" font-weight="700">55.0%</tspan>
+  </text>
+
+  <!-- retention card -->
+  <rect x="680" y="404" width="396" height="232" rx="14" fill="#161b27" stroke="#232a3a"/>
+  <text x="700" y="432" fill="#e6e9ef" font-size="15" font-weight="700">Retention by cohort</text>
+  <g font-size="10" fill="#8b95a8">
+    <text x="700" y="462">Cohort</text>
+    <text x="800" y="462">D0</text><text x="840" y="462">D1</text><text x="880" y="462">D2</text>
+    <text x="920" y="462">D3</text><text x="960" y="462">D4</text><text x="1000" y="462">D5</text><text x="1040" y="462">D6</text>
+  </g>
+  <!-- heatmap rows -->
+  <g>
+    <!-- row helper: opacities approximate retention decay -->
+    <g transform="translate(0,470)">
+      <text x="700" y="14" fill="#c3cad8" font-size="10">06-05</text>
+      <rect x="792" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.97)"/>
+      <rect x="832" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.45)"/>
+      <rect x="872" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.36)"/>
+      <rect x="912" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.30)"/>
+      <rect x="952" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.26)"/>
+      <rect x="992" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.22)"/>
+      <rect x="1032" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.20)"/>
+    </g>
+    <g transform="translate(0,494)">
+      <text x="700" y="14" fill="#c3cad8" font-size="10">06-12</text>
+      <rect x="792" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.97)"/>
+      <rect x="832" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.50)"/>
+      <rect x="872" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.40)"/>
+      <rect x="912" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.33)"/>
+      <rect x="952" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.28)"/>
+      <rect x="992" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.24)"/>
+      <rect x="1032" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.21)"/>
+    </g>
+    <g transform="translate(0,518)">
+      <text x="700" y="14" fill="#c3cad8" font-size="10">06-19</text>
+      <rect x="792" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.97)"/>
+      <rect x="832" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.42)"/>
+      <rect x="872" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.34)"/>
+      <rect x="912" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.29)"/>
+      <rect x="952" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.25)"/>
+      <rect x="992" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.22)"/>
+      <rect x="1032" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.19)"/>
+    </g>
+    <g transform="translate(0,542)">
+      <text x="700" y="14" fill="#c3cad8" font-size="10">06-26</text>
+      <rect x="792" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.97)"/>
+      <rect x="832" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.38)"/>
+      <rect x="872" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.31)"/>
+      <rect x="912" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.27)"/>
+      <rect x="952" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.23)"/>
+      <rect x="992" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.20)"/>
+      <rect x="1032" y="2" width="34" height="16" rx="4" fill="rgba(99,102,241,0.18)"/>
+    </g>
+  </g>
+  <text x="700" y="624" fill="#8b95a8" font-size="11">% of each cohort active N days after first visit · avg D1 ≈ 39%</text>
+</svg>
