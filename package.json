@@ -1,0 +1,33 @@
+{
+  "name": "fullstack-saas-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A product-analytics SaaS (mini PostHog) — event ingestion, funnels, retention, time-series.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:static": "NEXT_PUBLIC_STATIC_DEMO=true next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "5.22.0",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "2.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "prisma": "5.22.0",
+    "tsx": "4.16.2",
+    "typescript": "5.5.4",
+    "vitest": "1.6.0"
+  }
+}
